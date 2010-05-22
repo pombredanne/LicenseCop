@@ -14,6 +14,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-var p = Ent.Project.create();
+var p = Ent.Project.create("LicenseCop", "jar");
 p.setVersion(1, 0, 0);
 p.setJavaVersion(6);

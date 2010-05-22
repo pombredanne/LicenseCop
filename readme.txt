@@ -22,9 +22,16 @@ How it works
 Assumes each source file starts with a block comment.
 This comment is removed and replaced with a block comment containing the text in your header.txt file.
 
+The code is driven by the EPipes library, developed by Ephox, which is soon to be open sourced.
+
 Template Fields
 ===============
 You can insert ${year} into your header.txt, which will be replaced by the year in the output.
+
+Building
+========
+LicenseCop is built with Ent, a build system developed by Ephox. This tool is currently private and closed-source,
+but it may be opened up in the near future.
 
 Caveats
 =======
