@@ -12,7 +12,8 @@ public class FileExtensionIsOneOf implements Predicate<File> {
     }
 
     public boolean accept(File file) {
-        return contains(extensions, getExtension(file));
+        String x = getExtension(file);
+        return contains(extensions, x);
     }
 
     // FIX: sideways
@@ -20,7 +21,7 @@ public class FileExtensionIsOneOf implements Predicate<File> {
         String name = file.getName();
         int lastDot = name.lastIndexOf(".");
         if (lastDot == -1) return "";
-        return name.substring(lastDot);
+        return name.substring(lastDot + 1);
     }
 
     // FIX: sideways

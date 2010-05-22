@@ -12,14 +12,15 @@ public class FileSplitter extends Mapper<FileAndContents, FileInfo> {
         File file = fc.getFile();
         String trimmed = fc.getContents().trim();
 
+        // FIX: map these to file extensions
         String startComment = "/*";
         String endComment = "*/";
 
         Pattern p = makePattern(startComment, endComment);
         Matcher m = p.matcher(trimmed);
         if (m.matches() && m.groupCount() == 2) {
-            String header = m.group(1);
-            String body = m.group(2);
+            String header = m.group(1).trim();
+            String body = m.group(2).trim();
             return new FileInfo(header, body, file);
         } else {
             return new FileInfo("", trimmed, file);

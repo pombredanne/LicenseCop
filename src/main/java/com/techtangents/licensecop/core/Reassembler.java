@@ -15,7 +15,7 @@ public class Reassembler extends Pipe<FileInfo, FileAndContents> {
         String startComment = "/*";
         String endComment = "*/";
 
-        String fullContents = startComment + "\n" + header + endComment + "\n" + fileInfo.getBody();
+        String fullContents = startComment + "\n" + header + endComment + "\n\n" + fileInfo.getBody();
         FileAndContents fac = new FileAndContents(fileInfo.getFile(), fullContents);
         produce(fac);
         

@@ -8,8 +8,12 @@ import java.io.File;
 
 public class RecursiveListFiles extends Pipe<File, File> {
     public void consume(File file) {
-        if (!file.isDirectory()) throw new IllegalArgumentException(file + " is not a folder");
-        EPipes.pipe(file, new ListFiles(), "isFile", pipeOutput());
-        EPipes.pipe(file, new ListFiles(), "isFolder", new RecursiveListFiles(), pipeOutput());
+        if (file.getName().startsWith(".")) return;
+
+        if (file.isFile()) {
+            produce(file);
+        } else if (file.isDirectory()) {
+            EPipes.pipe(file, new ListFiles(), new RecursiveListFiles(), pipeOutput());
+        }
     }
 }

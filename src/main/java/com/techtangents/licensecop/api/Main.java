@@ -5,6 +5,6 @@ public class Main {
 
 	public static void main(String[] args) {
 		String folder = args[0];
-		cop.check(folder, "Copyright 2010 Dylan Just and Ephox Corporation");
+        cop.check(folder);
 	}
 }
