@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager" verified="true">
     <list default="true" readonly="true" id="1155b124-4e95-431d-8d7c-62b42e407a18" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LicenseCop.iws" afterPath="$PROJECT_DIR$/LicenseCop.iws" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <ignored path=".idea/workspace.xml" />
@@ -563,7 +564,7 @@
     <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added LICENSE and NOTICE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added .gitignore" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -579,6 +580,7 @@
     <MESSAGE value="Added readme. Renamed main method in LicenseCop.java" />
     <MESSAGE value="Added Ent build script. Updated readme." />
     <MESSAGE value="Added LICENSE and NOTICE" />
+    <MESSAGE value="Added .gitignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
