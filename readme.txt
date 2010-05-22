@@ -43,3 +43,4 @@ not:
  * license
  */
 - Runs in place, rather than copying to a temp file.
+- Always uses \n for line endings - .git complains about this.
