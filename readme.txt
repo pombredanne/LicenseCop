@@ -1,6 +1,6 @@
 License Cop
 ===========
-A tool for adding license/copyright headers to your source files.
+A tool for adding license/copyright headers to your source files.   
 
 Author: Dylan Just
 License: Apache 2. See NOTICE and LICENSE files.
@@ -22,6 +22,10 @@ How it works
 Assumes each source file starts with a block comment.
 This comment is removed and replaced with a block comment containing the text in your header.txt file.
 
+Template Fields
+===============
+You can insert ${year} into your header.txt, which will be replaced by the year in the output.
+
 Caveats
 =======
 - Currently all source files are rewritten to disk, even if the header is already ok.
@@ -38,3 +42,4 @@ not:
 /*
  * license
  */
+- Runs in place, rather than copying to a temp file.
