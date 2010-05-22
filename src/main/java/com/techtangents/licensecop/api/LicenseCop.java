@@ -7,6 +7,7 @@ import com.techtangents.licensecop.alien.WholeFileWriter;
 import com.techtangents.licensecop.core.Checker;
 import com.techtangents.licensecop.core.FileExtensionIsOneOf;
 import com.techtangents.licensecop.core.FileSplitter;
+import com.techtangents.licensecop.core.HardCoded;
 import com.techtangents.licensecop.core.Reassembler;
 import com.techtangents.licensecop.alien.WholeFileReader;
 
@@ -17,11 +18,11 @@ public class LicenseCop {
 
     private final HeaderFileReader headerFile = new HeaderFileReader();
 
-	public void check(String folder) {
+    public void go(String folder) {
         Integer year = Calendar.getInstance().get(Calendar.YEAR);
         File folderFile = new File(folder);
 
-        String header = headerFile.read(new File(folder, "header.txt"));
+        String header = headerFile.read(new File(folder, HardCoded.HEADER_PATH));
 
         header = header.replace("${year}", year.toString());
 
