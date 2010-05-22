@@ -66,8 +66,8 @@
       <property name="field_breakpoints_groupByClasses" value="true" />
       <property name="method_breakpoints_groupByClasses" value="true" />
       <property name="exception_breakpoints_viewId" value="TABLE" />
-      <property name="field_breakpoints_viewId" value="TABLE" />
       <property name="exception_breakpoints_groupByClasses" value="true" />
+      <property name="field_breakpoints_viewId" value="TABLE" />
       <property name="method_breakpoints_groupByMethods" value="false" />
     </ui_properties>
   </component>
@@ -134,7 +134,7 @@
       <file leaf-file-name="FileExtensionIsOneOf.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/techtangents/licensecop/core/FileExtensionIsOneOf.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="320" selection-end="320" vertical-scroll-proportion="0.2228261">
+            <state line="12" column="0" selection-start="320" selection-end="320" vertical-scroll-proportion="0.2113402">
               <folding />
             </state>
           </provider>
@@ -153,15 +153,6 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/techtangents/licensecop/alien/RecursiveListFiles.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="10" column="51" selection-start="327" selection-end="327" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileNotFoundRuntimeException.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/techtangents/licensecop/core/exceptions/FileNotFoundRuntimeException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="15" selection-start="69" selection-end="69" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -235,6 +226,8 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -270,6 +263,26 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtangents" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="licensecop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -281,22 +294,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="run" />
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="epipes-1.0-SNAPSHOT.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="techtangents" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="licensecop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -313,9 +336,9 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -507,7 +530,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1288" height="744" extended-state="6" />
+    <frame x="-4" y="-4" width="1288" height="774" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -580,77 +603,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/techtangents/licensecop/core/Checker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="47" selection-start="90" selection-end="90" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="2" column="47" selection-start="90" selection-end="90" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/techtangents/licensecop/api/LicenseCop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="24" selection-start="1185" selection-end="1185" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="32" column="24" selection-start="1185" selection-end="1185" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/techtangents/licensecop/alien/WholeFileReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="99" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="9" column="99" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/techtangents/licensecop/alien/HeaderFileReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="31" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="8" column="31" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/techtangents/licensecop/api/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="14" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="7" column="14" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/techtangents/licensecop/core/FileSplitter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="44" selection-start="413" selection-end="413" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="14" column="44" selection-start="413" selection-end="413" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/techtangents/licensecop/alien/WholeFileWriter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="56" selection-start="448" selection-end="448" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="12" column="56" selection-start="448" selection-end="448" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/techtangents/licensecop/core/Reassembler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="79" selection-start="520" selection-end="520" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="17" column="79" selection-start="520" selection-end="520" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/techtangents/licensecop/alien/RecursiveListFiles.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="51" selection-start="327" selection-end="327" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/techtangents/licensecop/core/exceptions/FileNotFoundRuntimeException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="15" selection-start="69" selection-end="69" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="10" column="51" selection-start="327" selection-end="327" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/techtangents/licensecop/core/FileExtensionIsOneOf.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="320" selection-end="320" vertical-scroll-proportion="0.2228261">
+        <state line="12" column="0" selection-start="320" selection-end="320" vertical-scroll-proportion="0.2113402">
           <folding />
         </state>
       </provider>
