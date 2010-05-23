@@ -30,6 +30,10 @@ Usage
 
 where 'folder' is the root folder of your project.
 Your project requires a build/header.txt file containing your header text.
+
+If all goes well, your files will end up with the header text in the right comment style for the file type.
+No console output unless something goes wrong.
+
 Requires java 6.
 
 How it works
@@ -70,6 +74,5 @@ not:
 - Runs in place, rather than copying to a temp file.
 - Always uses \n for line endings - .git complains about this, and sometimes you end up with removed
     newlines at the end of files.
-- EPipes is spitting out some rubbish output - this will be fixed.
 - The header comment always goes before the java package declaration.
     If yours is after the package dec, you may get two of them.
