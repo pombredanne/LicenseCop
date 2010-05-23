@@ -33,6 +33,7 @@ public class LicenseCop {
     private final FileTypes types = new FileTypes();
     private final HeaderFileReader headerFileReader = new HeaderFileReader();
 
+    // FIX: EPipes is spitting out lots of rubbish output - fix it and re-integrate.
     public void go(String path) {
         File folder = new File(path);
         String header = headerFileReader.read(path);

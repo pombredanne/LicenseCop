@@ -1,0 +1,2 @@
+Main-Class: com.techtangents.licensecop.apid.Main
+Class-Path: epipes-1.0-SNAPSHOT.jar
