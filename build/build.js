@@ -15,6 +15,6 @@ limitations under the License.
 */
 
 var p = Ent.Project.create("LicenseCop", "jar");
-p.setVersion(1, 0, 0);
+p.setVersion(1, 1, 0);
 p.setJavaVersion(6);
 p.setIncludeSource(true);
