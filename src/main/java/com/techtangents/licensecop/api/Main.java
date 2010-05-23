@@ -20,7 +20,12 @@ public class Main {
 	private static final LicenseCop cop = new LicenseCop();
 
 	public static void main(String[] args) {
+        if (args.length != 1) usage();
 		String folder = args[0];
         cop.go(folder);
 	}
+
+    private static void usage() {
+        System.out.println("Usage: java -jar LicenseCop.jar folder");
+    }
 }
