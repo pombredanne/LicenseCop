@@ -48,7 +48,6 @@ public class LicenseCop {
                 new FileExtensionIsOneOf(types.supportedTypes()),
                 new WholeFileReaderPipe(),
                 new FileSplitter(),
-                new Checker(),
                 new Reassembler(header),
                 new WholeFileWriterPipe());
 	}
