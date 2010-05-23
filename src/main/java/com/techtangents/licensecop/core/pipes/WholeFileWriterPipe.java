@@ -16,22 +16,19 @@ limitations under the License.
 
 package com.techtangents.licensecop.core.pipes;
 
+import com.ephox.epipes.core.Consumer;
+import com.techtangents.licensecop.alien.io.WholeFileWriter;
+import com.techtangents.licensecop.core.types.FileAndContents;
+
 import java.io.File;
 
-public class FileAndContents {
-    private final File file;
-    private final String contents;
+public class WholeFileWriterPipe implements Consumer<FileAndContents> {
 
-    public FileAndContents(File file, String contents) {
-        this.file = file;
-        this.contents = contents;
-    }
+    private final WholeFileWriter writer = new WholeFileWriter();
 
-    public File getFile() {
-        return file;
-    }
-
-    public String getContents() {
-        return contents;
+    public void consume(FileAndContents fileAndContents) {
+        File file = fileAndContents.getFile();
+        String contents = fileAndContents.getContents();
+        writer.write(file, contents);
     }
 }

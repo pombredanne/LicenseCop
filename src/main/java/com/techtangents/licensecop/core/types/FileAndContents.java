@@ -14,22 +14,24 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package com.techtangents.licensecop.alien;
-
-import com.ephox.epipes.core.EPipes;
-import com.ephox.epipes.core.Pipe;
-import com.ephox.epipes.files.ListFiles;
+package com.techtangents.licensecop.core.types;
 
 import java.io.File;
 
-public class RecursiveListFiles extends Pipe<File, File> {
-    public void consume(File file) {
-        if (file.getName().startsWith(".")) return;
+public class FileAndContents {
+    private final File file;
+    private final String contents;
 
-        if (file.isFile()) {
-            produce(file);
-        } else if (file.isDirectory()) {
-            EPipes.pipe(file, new ListFiles(), new RecursiveListFiles(), pipeOutput());
-        }
+    public FileAndContents(File file, String contents) {
+        this.file = file;
+        this.contents = contents;
+    }
+
+    public File getFile() {
+        return file;
+    }
+
+    public String getContents() {
+        return contents;
     }
 }

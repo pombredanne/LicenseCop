@@ -17,15 +17,16 @@ limitations under the License.
 package com.techtangents.licensecop.api;
 
 import com.ephox.epipes.core.EPipes;
-import com.techtangents.licensecop.alien.RecursiveListFiles;
-import com.techtangents.licensecop.alien.WholeFileReader;
-import com.techtangents.licensecop.alien.WholeFileWriterPipe;
+import com.techtangents.licensecop.alien.io.FileExtensionIsOneOf;
+import com.techtangents.licensecop.alien.pipes.RecursiveListFiles;
+import com.techtangents.licensecop.alien.io.WholeFileReader;
+import com.techtangents.licensecop.core.filetypes.FileTypes;
 import com.techtangents.licensecop.core.pipes.Checker;
-import com.techtangents.licensecop.core.pipes.FileExtensionIsOneOf;
 import com.techtangents.licensecop.core.pipes.FileSplitter;
-import com.techtangents.licensecop.core.pipes.HardCoded;
+import com.techtangents.licensecop.core.data.HardCoded;
 import com.techtangents.licensecop.core.pipes.Reassembler;
 import com.techtangents.licensecop.core.pipes.WholeFileReaderPipe;
+import com.techtangents.licensecop.core.pipes.WholeFileWriterPipe;
 
 import java.io.File;
 import java.util.Calendar;
@@ -33,23 +34,28 @@ import java.util.Calendar;
 public class LicenseCop {
 
     private final WholeFileReader reader = new WholeFileReader();
+    private final FileTypes types = new FileTypes();
 
-    public void go(String folder) {
-        Integer year = Calendar.getInstance().get(Calendar.YEAR);
-        File folderFile = new File(folder);
+    public void go(String path) {
+        File folder = new File(path);
+        File headerFile = new File(path, HardCoded.HEADER_PATH);
+        String templateHeader = reader.read(headerFile);
+        String header = templateReplace(templateHeader);
 
-        String header = reader.read(new File(folder, HardCoded.HEADER_PATH));
-
-        header = header.replace("${year}", year.toString());
-
-        EPipes.pipe(folderFile,
+        EPipes.pipe(folder,
                 new RecursiveListFiles(),
                 "isFile",
-                new FileExtensionIsOneOf("java", "js"),
+                new FileExtensionIsOneOf(types.supportedTypes()),
                 new WholeFileReaderPipe(),
                 new FileSplitter(),
                 new Checker(),
                 new Reassembler(header),
                 new WholeFileWriterPipe());
 	}
+
+    private String templateReplace(String header) {
+        Integer year = Calendar.getInstance().get(Calendar.YEAR);
+        header = header.replace("${year}", year.toString());
+        return header;
+    }
 }

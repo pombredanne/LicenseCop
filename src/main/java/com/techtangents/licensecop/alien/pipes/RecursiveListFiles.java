@@ -14,21 +14,22 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package com.techtangents.licensecop.alien;
+package com.techtangents.licensecop.alien.pipes;
+
+import com.ephox.epipes.core.EPipes;
+import com.ephox.epipes.core.Pipe;
+import com.ephox.epipes.files.ListFiles;
 
 import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 
-public class WholeFileWriter {
-    public void write(File file, String contents) {
-        // FIX: edge
-        try {
-            FileWriter w = new FileWriter(file);
-            w.write(contents);
-            w.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+public class RecursiveListFiles extends Pipe<File, File> {
+    public void consume(File file) {
+        if (file.getName().startsWith(".")) return;
+
+        if (file.isFile()) {
+            produce(file);
+        } else if (file.isDirectory()) {
+            EPipes.pipe(file, new ListFiles(), new RecursiveListFiles(), pipeOutput());
         }
     }
 }

@@ -17,8 +17,8 @@ limitations under the License.
 package com.techtangents.licensecop.core.pipes;
 
 import com.ephox.epipes.core.Pipe;
-import com.techtangents.licensecop.alien.WholeFileReader;
-import com.techtangents.licensecop.core.pipes.FileAndContents;
+import com.techtangents.licensecop.alien.io.WholeFileReader;
+import com.techtangents.licensecop.core.types.FileAndContents;
 
 import java.io.File;
 

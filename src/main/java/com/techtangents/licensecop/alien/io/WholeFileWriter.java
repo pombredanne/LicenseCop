@@ -14,30 +14,21 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package com.techtangents.licensecop.core.pipes;
+package com.techtangents.licensecop.alien.io;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
-public class FileInfo {
-    private final String header;
-    private final String body;
-    private final File file;
-
-    public FileInfo(String header, String body, File file) {
-        this.header = header;
-        this.body = body;
-        this.file = file;
-    }
-
-    public String getHeader() {
-        return header;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public File getFile() {
-        return file;
+public class WholeFileWriter {
+    public void write(File file, String contents) {
+        // FIX: edge
+        try {
+            FileWriter w = new FileWriter(file);
+            w.write(contents);
+            w.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

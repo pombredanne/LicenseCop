@@ -14,36 +14,25 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package com.techtangents.licensecop.core.pipes;
+package com.techtangents.licensecop.alien.io;
 
 import com.ephox.epipes.bool.predicates.Predicate;
+import com.techtangents.licensecop.alien.array.ArrayContains;
 
 import java.io.File;
 
 public class FileExtensionIsOneOf implements Predicate<File> {
+    
     private final String[] extensions;
+    private final FileExtensionFinder fileExtensionFinder = new FileExtensionFinder();
+    private final ArrayContains arrays = new ArrayContains();
 
     public FileExtensionIsOneOf(String... extensions) {
         this.extensions = extensions;
     }
 
     public boolean accept(File file) {
-        String x = getExtension(file);
-        return contains(extensions, x);
-    }
-
-    // FIX: sideways
-    private String getExtension(File file) {
-        String name = file.getName();
-        int lastDot = name.lastIndexOf(".");
-        if (lastDot == -1) return "";
-        return name.substring(lastDot + 1);
-    }
-
-    // FIX: sideways
-    private boolean contains(Object[] a, Object x) {
-        for (Object o : a) if (o.equals(x)) return true;
-        return false;
-
+        String x = fileExtensionFinder.getExtension(file);
+        return arrays.contains(extensions, x);
     }
 }

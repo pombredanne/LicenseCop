@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package com.techtangents.licensecop.core.pipes;
+package com.techtangents.licensecop.core.data;
 
 public class HardCoded {
     public static final String HEADER_PATH = "build/header.txt";

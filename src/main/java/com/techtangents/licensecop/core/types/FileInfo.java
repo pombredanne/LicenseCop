@@ -14,20 +14,32 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package com.techtangents.licensecop.alien;
+package com.techtangents.licensecop.core.types;
 
-import com.ephox.epipes.core.Consumer;
-import com.techtangents.licensecop.core.pipes.FileAndContents;
+import com.techtangents.licensecop.core.filetypes.FileTypeInfo;
 
 import java.io.File;
 
-public class WholeFileWriterPipe implements Consumer<FileAndContents> {
+public class FileInfo {
+    private final String header;
+    private final String body;
+    private final File file;
 
-    private final WholeFileWriter writer = new WholeFileWriter();
+    public FileInfo(String header, String body, File file, FileTypeInfo fileTypeInfo) {
+        this.header = header;
+        this.body = body;
+        this.file = file;
+    }
 
-    public void consume(FileAndContents fileAndContents) {
-        File file = fileAndContents.getFile();
-        String contents = fileAndContents.getContents();
-        writer.write(file, contents);
+    public String getHeader() {
+        return header;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public File getFile() {
+        return file;
     }
 }

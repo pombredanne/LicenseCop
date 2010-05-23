@@ -17,6 +17,7 @@ limitations under the License.
 package com.techtangents.licensecop.core.pipes;
 
 import com.ephox.epipes.bool.predicates.Predicate;
+import com.techtangents.licensecop.core.types.FileInfo;
 
 public class Checker implements Predicate<FileInfo> {
     public boolean accept(FileInfo fileInfo) {

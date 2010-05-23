@@ -17,6 +17,11 @@ limitations under the License.
 package com.techtangents.licensecop.core.pipes;
 
 import com.ephox.epipes.core.Mapper;
+import com.techtangents.licensecop.alien.io.FileExtensionFinder;
+import com.techtangents.licensecop.core.filetypes.FileTypeInfo;
+import com.techtangents.licensecop.core.filetypes.FileTypes;
+import com.techtangents.licensecop.core.types.FileAndContents;
+import com.techtangents.licensecop.core.types.FileInfo;
 
 import java.io.File;
 import java.util.regex.Matcher;
@@ -24,22 +29,32 @@ import java.util.regex.Pattern;
 
 public class FileSplitter extends Mapper<FileAndContents, FileInfo> {
 
+    private final FileTypes types = new FileTypes();
+    private final FileExtensionFinder extensions = new FileExtensionFinder();
+
     public FileInfo map(FileAndContents fc) {
         File file = fc.getFile();
         String trimmed = fc.getContents().trim();
 
-        // FIX: map these to file extensions
-        String startComment = "/*";
-        String endComment = "*/";
+        // FIX: we're calculating the extension twice
+        String x = extensions.getExtension(file);
+        FileTypeInfo typeInfo = types.info(x);
+
+        String startComment = typeInfo.getStartComment();
+        String endComment = typeInfo.getEndComment();
 
         Pattern p = makePattern(startComment, endComment);
+        return tearApart(file, trimmed, typeInfo, p);
+    }
+
+    private FileInfo tearApart(File file, String trimmed, FileTypeInfo typeInfo, Pattern p) {
         Matcher m = p.matcher(trimmed);
         if (m.matches() && m.groupCount() == 2) {
             String header = m.group(1).trim();
             String body = m.group(2);
-            return new FileInfo(header, body, file);
+            return new FileInfo(header, body, file, typeInfo);
         } else {
-            return new FileInfo("", trimmed, file);
+            return new FileInfo("", trimmed, file, typeInfo);
         }
     }
 

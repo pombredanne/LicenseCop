@@ -17,6 +17,8 @@ limitations under the License.
 package com.techtangents.licensecop.core.pipes;
 
 import com.ephox.epipes.core.Pipe;
+import com.techtangents.licensecop.core.types.FileAndContents;
+import com.techtangents.licensecop.core.types.FileInfo;
 
 public class Reassembler extends Pipe<FileInfo, FileAndContents> {
     private final String header;
