@@ -1,3 +1,18 @@
+Copyright 2010 Dylan Just
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+
 License Cop
 ===========
 A tool for adding license/copyright headers to your source files.   
@@ -33,12 +48,15 @@ Building
 LicenseCop is built with Ent, a build system developed by Ephox. This tool is currently private and closed-source,
 but it may be opened up in the near future.
 
-Caveats
-=======
+Caveats/Issues/Quirks
+=====================
+Nothing major... just be aware of the following. As always, make sure your code is backed up and
+in a version control system before using this tool. 
+
 - Currently all source files are rewritten to disk, even if the header is already ok.
-  Might be slow in larger projects.
+    Might be slow in larger projects.
 - As it removes the block comment at the start of the file, you may lose non-license blocks (e.g. javadoc)'
-  on the first run for a project
+    on the first run for a project
 - Only supports .js and .java files
 - Only block-style comments are supported.
 - No line prefixes. i.e.
@@ -50,4 +68,8 @@ not:
  * license
  */
 - Runs in place, rather than copying to a temp file.
-- Always uses \n for line endings - .git complains about this.
+- Always uses \n for line endings - .git complains about this, and sometimes you end up with removed
+    newlines at the end of files.
+- EPipes is spitting out some rubbish output - this will be fixed.
+- The header comment always goes before the java package declaration.
+    If yours is after the package dec, you may get two of them.
