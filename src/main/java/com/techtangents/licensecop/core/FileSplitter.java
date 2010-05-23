@@ -36,7 +36,7 @@ public class FileSplitter extends Mapper<FileAndContents, FileInfo> {
         Matcher m = p.matcher(trimmed);
         if (m.matches() && m.groupCount() == 2) {
             String header = m.group(1).trim();
-            String body = m.group(2).trim() + "\n";
+            String body = m.group(2);
             return new FileInfo(header, body, file);
         } else {
             return new FileInfo("", trimmed, file);
@@ -49,7 +49,7 @@ public class FileSplitter extends Mapper<FileAndContents, FileInfo> {
                 Pattern.quote(startComment)
                 + ".*?"
                 + Pattern.quote(endComment) +
-                ")" +
+                "[\r\n ]*)" +
                 "(.*)$",
                 Pattern.DOTALL);
     }

@@ -17,15 +17,15 @@ limitations under the License.
 package com.techtangents.licensecop.api;
 
 import com.ephox.epipes.core.EPipes;
-import com.techtangents.licensecop.alien.WholeFileReader;
 import com.techtangents.licensecop.alien.RecursiveListFiles;
-import com.techtangents.licensecop.core.WholeFileReaderPipe;
-import com.techtangents.licensecop.alien.WholeFileWriter;
+import com.techtangents.licensecop.alien.WholeFileReader;
+import com.techtangents.licensecop.alien.WholeFileWriterPipe;
 import com.techtangents.licensecop.core.Checker;
 import com.techtangents.licensecop.core.FileExtensionIsOneOf;
 import com.techtangents.licensecop.core.FileSplitter;
 import com.techtangents.licensecop.core.HardCoded;
 import com.techtangents.licensecop.core.Reassembler;
+import com.techtangents.licensecop.core.WholeFileReaderPipe;
 
 import java.io.File;
 import java.util.Calendar;
@@ -50,6 +50,6 @@ public class LicenseCop {
                 new FileSplitter(),
                 new Checker(),
                 new Reassembler(header),
-                new WholeFileWriter());
+                new WholeFileWriterPipe());
 	}
 }
