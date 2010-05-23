@@ -17,7 +17,8 @@ limitations under the License.
 package com.techtangents.licensecop.alien.pipes;
 
 import com.ephox.epipes.bool.predicates.Predicate;
-import com.techtangents.licensecop.alien.array.ArrayContains;
+import com.techtangents.arraymangler.bits.ArrayContains;
+import com.techtangents.arraymangler.bits.DefaultArrayContains;
 import com.techtangents.licensecop.alien.io.FileExtensionFinder;
 
 import java.io.File;
@@ -27,8 +28,8 @@ public class FileExtensionIsOneOf implements Predicate<File> {
     
     private final String[] extensions;
     private final FileExtensionFinder fileExtensionFinder = new FileExtensionFinder();
-    private final ArrayContains arrays = new ArrayContains();
-
+    private final ArrayContains arrays = new DefaultArrayContains();
+    
     public FileExtensionIsOneOf(String... extensions) {
         this.extensions = extensions;
     }

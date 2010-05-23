@@ -6,14 +6,18 @@ This product includes software developed by Dylan Just (http://www.techtangents.
 This product uses and redistributes the EPipes library, developed by Ephox (http://www.ephox.com/).
 
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this software except in compliance with the License.
-You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+Libraries used by, and redistributed with this software
+-------------------------------------------------------
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+EPipes
+Copyright 2010 Ephox Corporation
+
+This product includes software developed by Ephox Corporation (http://www.ephox.com/).
+
+--------------------------------
+
+ArrayMangler
+Copyright 2010 Dylan Just
+
+This product includes software developed by Dylan Just (http://www.techtangents.com/).
