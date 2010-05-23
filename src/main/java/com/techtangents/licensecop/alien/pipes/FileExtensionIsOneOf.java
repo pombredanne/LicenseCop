@@ -14,13 +14,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package com.techtangents.licensecop.alien.io;
+package com.techtangents.licensecop.alien.pipes;
 
 import com.ephox.epipes.bool.predicates.Predicate;
 import com.techtangents.licensecop.alien.array.ArrayContains;
+import com.techtangents.licensecop.alien.io.FileExtensionFinder;
 
 import java.io.File;
 
+// FIX: Should be part of EPipes
 public class FileExtensionIsOneOf implements Predicate<File> {
     
     private final String[] extensions;

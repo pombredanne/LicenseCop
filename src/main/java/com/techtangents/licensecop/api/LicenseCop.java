@@ -17,7 +17,7 @@ limitations under the License.
 package com.techtangents.licensecop.api;
 
 import com.ephox.epipes.core.EPipes;
-import com.techtangents.licensecop.alien.io.FileExtensionIsOneOf;
+import com.techtangents.licensecop.alien.pipes.FileExtensionIsOneOf;
 import com.techtangents.licensecop.alien.pipes.RecursiveListFiles;
 import com.techtangents.licensecop.alien.io.WholeFileReader;
 import com.techtangents.licensecop.core.filetypes.FileTypes;

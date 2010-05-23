@@ -22,8 +22,10 @@ import com.ephox.epipes.files.ListFiles;
 
 import java.io.File;
 
+// FIX: should be part of EPipes
 public class RecursiveListFiles extends Pipe<File, File> {
     public void consume(File file) {
+        // FIX: make generically applicable - maybe just add a filtering pipe after this one
         if (file.getName().startsWith(".")) return;
 
         if (file.isFile()) {
