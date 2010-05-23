@@ -17,29 +17,25 @@ limitations under the License.
 package com.techtangents.licensecop.api;
 
 import com.ephox.epipes.core.EPipes;
-import com.techtangents.licensecop.alien.io.WholeFileReader;
 import com.techtangents.licensecop.alien.pipes.FileExtensionIsOneOf;
 import com.techtangents.licensecop.alien.pipes.RecursiveListFiles;
-import com.techtangents.licensecop.core.data.HardCoded;
 import com.techtangents.licensecop.core.filetypes.FileTypes;
+import com.techtangents.licensecop.core.headerfile.HeaderFileReader;
 import com.techtangents.licensecop.core.pipes.FileSplitter;
 import com.techtangents.licensecop.core.pipes.Reassembler;
 import com.techtangents.licensecop.core.pipes.WholeFileReaderPipe;
 import com.techtangents.licensecop.core.pipes.WholeFileWriterPipe;
 
 import java.io.File;
-import java.util.Calendar;
 
 public class LicenseCop {
 
-    private final WholeFileReader reader = new WholeFileReader();
     private final FileTypes types = new FileTypes();
+    private final HeaderFileReader headerFileReader = new HeaderFileReader();
 
     public void go(String path) {
         File folder = new File(path);
-        File headerFile = new File(path, HardCoded.HEADER_PATH);
-        String templateHeader = reader.read(headerFile);
-        String header = templateReplace(templateHeader);
+        String header = headerFileReader.read(path);
 
         EPipes.pipe(folder,
                 new RecursiveListFiles(),
@@ -50,10 +46,4 @@ public class LicenseCop {
                 new Reassembler(header),
                 new WholeFileWriterPipe());
 	}
-
-    private String templateReplace(String header) {
-        Integer year = Calendar.getInstance().get(Calendar.YEAR);
-        header = header.replace("${year}", year.toString());
-        return header;
-    }
 }
