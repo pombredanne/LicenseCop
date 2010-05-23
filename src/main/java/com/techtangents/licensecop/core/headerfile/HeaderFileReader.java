@@ -2,7 +2,6 @@ package com.techtangents.licensecop.core.headerfile;
 
 import com.techtangents.licensecop.alien.io.WholeFileReader;
 import com.techtangents.licensecop.core.data.HardCoded;
-import com.techtangents.licensecop.core.headerfile.TemplateReplace;
 
 import java.io.File;
 
