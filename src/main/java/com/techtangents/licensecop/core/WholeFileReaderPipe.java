@@ -14,21 +14,20 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package com.techtangents.licensecop.alien;
+package com.techtangents.licensecop.core;
+
+import com.ephox.epipes.core.Pipe;
+import com.techtangents.licensecop.alien.WholeFileReader;
+import com.techtangents.licensecop.core.FileAndContents;
 
 import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 
-public class WholeFileWriter {
-    public void write(File file, String contents) {
-        // FIX: edge
-        try {
-            FileWriter w = new FileWriter(file);
-            w.write(contents);
-            w.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
+// FIX: split up - reading a whole file is one thing. Packaging up in a FileAndContents is another.
+public class WholeFileReaderPipe extends Pipe<File, FileAndContents> {
+    private final WholeFileReader readifier = new WholeFileReader();
+
+    public void consume(File file) {
+        String contents = readifier.read(file);
+        produce(new FileAndContents(file, contents));
+	}
 }

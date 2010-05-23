@@ -17,28 +17,28 @@ limitations under the License.
 package com.techtangents.licensecop.api;
 
 import com.ephox.epipes.core.EPipes;
-import com.techtangents.licensecop.alien.HeaderFileReader;
+import com.techtangents.licensecop.alien.WholeFileReader;
 import com.techtangents.licensecop.alien.RecursiveListFiles;
+import com.techtangents.licensecop.core.WholeFileReaderPipe;
 import com.techtangents.licensecop.alien.WholeFileWriter;
 import com.techtangents.licensecop.core.Checker;
 import com.techtangents.licensecop.core.FileExtensionIsOneOf;
 import com.techtangents.licensecop.core.FileSplitter;
 import com.techtangents.licensecop.core.HardCoded;
 import com.techtangents.licensecop.core.Reassembler;
-import com.techtangents.licensecop.alien.WholeFileReader;
 
 import java.io.File;
 import java.util.Calendar;
 
 public class LicenseCop {
 
-    private final HeaderFileReader headerFile = new HeaderFileReader();
+    private final WholeFileReader reader = new WholeFileReader();
 
     public void go(String folder) {
         Integer year = Calendar.getInstance().get(Calendar.YEAR);
         File folderFile = new File(folder);
 
-        String header = headerFile.read(new File(folder, HardCoded.HEADER_PATH));
+        String header = reader.read(new File(folder, HardCoded.HEADER_PATH));
 
         header = header.replace("${year}", year.toString());
 
@@ -46,7 +46,7 @@ public class LicenseCop {
                 new RecursiveListFiles(),
                 "isFile",
                 new FileExtensionIsOneOf("java", "js"),
-                new WholeFileReader(),
+                new WholeFileReaderPipe(),
                 new FileSplitter(),
                 new Checker(),
                 new Reassembler(header),
