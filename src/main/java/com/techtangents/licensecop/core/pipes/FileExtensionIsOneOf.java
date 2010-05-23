@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package com.techtangents.licensecop.core;
+package com.techtangents.licensecop.core.pipes;
 
 import com.ephox.epipes.bool.predicates.Predicate;
 

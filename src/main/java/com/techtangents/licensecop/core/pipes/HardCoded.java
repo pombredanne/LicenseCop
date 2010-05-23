@@ -14,14 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package com.techtangents.licensecop.core;
+package com.techtangents.licensecop.core.pipes;
 
-import com.ephox.epipes.bool.predicates.Predicate;
-
-public class Checker implements Predicate<FileInfo> {
-    public boolean accept(FileInfo fileInfo) {
-        
-        // FIX: check if file is already ok - only accept files that need fixing
-        return true;
-    }
+public class HardCoded {
+    public static final String HEADER_PATH = "build/header.txt";
 }

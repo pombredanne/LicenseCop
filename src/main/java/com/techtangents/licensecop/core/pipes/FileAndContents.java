@@ -14,30 +14,24 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package com.techtangents.licensecop.core;
+package com.techtangents.licensecop.core.pipes;
 
 import java.io.File;
 
-public class FileInfo {
-    private final String header;
-    private final String body;
+public class FileAndContents {
     private final File file;
+    private final String contents;
 
-    public FileInfo(String header, String body, File file) {
-        this.header = header;
-        this.body = body;
+    public FileAndContents(File file, String contents) {
         this.file = file;
-    }
-
-    public String getHeader() {
-        return header;
-    }
-
-    public String getBody() {
-        return body;
+        this.contents = contents;
     }
 
     public File getFile() {
         return file;
+    }
+
+    public String getContents() {
+        return contents;
     }
 }

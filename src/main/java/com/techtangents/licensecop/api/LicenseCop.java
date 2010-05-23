@@ -20,12 +20,12 @@ import com.ephox.epipes.core.EPipes;
 import com.techtangents.licensecop.alien.RecursiveListFiles;
 import com.techtangents.licensecop.alien.WholeFileReader;
 import com.techtangents.licensecop.alien.WholeFileWriterPipe;
-import com.techtangents.licensecop.core.Checker;
-import com.techtangents.licensecop.core.FileExtensionIsOneOf;
-import com.techtangents.licensecop.core.FileSplitter;
-import com.techtangents.licensecop.core.HardCoded;
-import com.techtangents.licensecop.core.Reassembler;
-import com.techtangents.licensecop.core.WholeFileReaderPipe;
+import com.techtangents.licensecop.core.pipes.Checker;
+import com.techtangents.licensecop.core.pipes.FileExtensionIsOneOf;
+import com.techtangents.licensecop.core.pipes.FileSplitter;
+import com.techtangents.licensecop.core.pipes.HardCoded;
+import com.techtangents.licensecop.core.pipes.Reassembler;
+import com.techtangents.licensecop.core.pipes.WholeFileReaderPipe;
 
 import java.io.File;
 import java.util.Calendar;
