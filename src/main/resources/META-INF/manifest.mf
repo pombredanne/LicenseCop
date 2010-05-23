@@ -1,2 +1,2 @@
 Main-Class: com.techtangents.licensecop.api.Main
-Class-Path: EPipes.jar ArrayMangler.jar
+Class-Path: EPipes/EPipes.jar ArrayMangler/ArrayMangler.jar
